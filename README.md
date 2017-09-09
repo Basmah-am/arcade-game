@@ -7,6 +7,6 @@
 * Once the player reaches the water the game is won.
 
 ### Installation :
-* donload the app
-* open index.html in the browser
-* Play ;D
+* Download the app.
+* Open index.html file in the browser.
+* Play ;D.
