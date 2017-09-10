@@ -1,3 +1,4 @@
+'use strict';
 window.onload = function(){
     document.getElementById("scores").innerHTML = 0;
 }
@@ -75,10 +76,10 @@ Player.prototype.update = function(dt) {
     if (this.y == -32){
         this.y -= 83;
         win.play();
-        player.reset();
-        player.score++;
+        this.reset();
+        this.score++;
         //update the score in the html
-        document.getElementById("scores").innerHTML = player.score;
+        document.getElementById("scores").innerHTML = this.score;
         console.log("you win!!");
     }
 };
@@ -93,20 +94,24 @@ Player.prototype.render = function() {
 };
 Player.prototype.handleInput = function(keypress) {
     if(keypress == 'left') {
-    if(this.x >= 2) { this.x -= 101; }
+        if(this.x >= 2){ 
+            this.x -= 101;
+        }
     }
-    if(keypress == 'right') {
-    if(this.x + 101 <= 420){ this.x += 101; }
+    if(keypress == 'right'){
+        if(this.x + 101 <= 420){ 
+            this.x += 101;
+        }
     }
     if(keypress == 'up') {
-    if(this.y - 83 > -51){
-        this.y -= 83;
+        if(this.y - 83 > -51){
+            this.y -= 83;
     }
 
     }
     if(keypress == 'down') {
-    if(this.y < 383){
-        this.y += 83;
+        if(this.y < 383){
+            this.y += 83;
     }
 }
 
